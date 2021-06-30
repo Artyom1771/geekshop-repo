@@ -51,6 +51,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Выйти <i class="fas fa-sign-out-alt"></i></a>
                 </li>
+                <li class="nav-item">
+                    <h7 class="nav-link">  Month: {{ mydate | date:"N" }} </h7>
+                </li>
             </ul>
         </div>
     </div>
@@ -62,6 +65,8 @@
 <!-- Bootstrap core JavaScript -->
 <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
 <script src="{%static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+
 
 <!-- FontAwesome script -->
 <script src="{% static 'vendor/fontawesome/fontawesome-icons.js' %}" crossorigin="anonymous"></script>
