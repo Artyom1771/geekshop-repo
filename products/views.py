@@ -1,7 +1,7 @@
 import os
-import json
 import datetime
 from django.shortcuts import render
+from products.models import Product, ProductCategory
 
 MODULE_DIR = os.path.dirname(__file__)
 
@@ -20,8 +20,8 @@ def index(request):
 def products(request):
     context = {
         'mydate': mydate,
-        'title': 'Geekshop - продукты'
+        'title': 'Geekshop - продукты',
+        'products': Product.objects.all(),
+        'categories': ProductCategory.objects.all(),
     }
-    file_path = os.path.join(MODULE_DIR, 'fixtures/goods.json')
-    context['products'] = json.load(open(file_path, encoding='utf-8'))
     return render(request, 'products/products.html', context)
